@@ -25,7 +25,7 @@ const RightSideNav = () => {
         </Button>
       </ButtonGroup>
       <div className="mt-4">
-        <h>Find Us On</h>
+        <h4>Find Us On</h4>
         <ListGroup>
           <ListGroup.Item className="mt-2">
             <FaFacebook /> Facebook{" "}
