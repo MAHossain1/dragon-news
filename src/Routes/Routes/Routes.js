@@ -5,6 +5,7 @@ import Main from "../../layouts/Main";
 import Category from "../../pages/Category/Category";
 import Home from "../../pages/Home/Home";
 import News from "../../pages/News/News";
+import RequireAuth from "../../Private/RequireAuth/RequireAuth";
 
 const routes = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/news/:id",
-        element: <News></News>,
+        element: (
+          <RequireAuth>
+            <News></News>
+          </RequireAuth>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/news/${params.id}`),
       },

@@ -15,7 +15,7 @@ const NewsSummaryCard = ({ news }) => {
     total_view,
     _id,
   } = news;
-  console.log(news);
+  // console.log(news);
   return (
     <Card className="mb-5">
       <Card.Header className="d-flex justify-content-between align-items-center">

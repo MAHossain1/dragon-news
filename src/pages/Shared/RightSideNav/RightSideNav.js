@@ -16,11 +16,20 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 
 const RightSideNav = () => {
-  const { providerLogin } = useContext(AuthContext);
+  const { providerLogin, createGithubUser } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
 
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(error => console.error(error));
+  };
+
+  const handleGithubSignIn = () => {
+    createGithubUser()
       .then(result => {
         const user = result.user;
         console.log(user);
@@ -38,7 +47,7 @@ const RightSideNav = () => {
         >
           <FaGoogle></FaGoogle> Sign in with Google
         </Button>
-        <Button variant="outline-dark">
+        <Button onClick={handleGithubSignIn} variant="outline-dark">
           <GoMarkGithub></GoMarkGithub> Sign in with Github
         </Button>
       </ButtonGroup>
