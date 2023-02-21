@@ -5,6 +5,8 @@ import Main from "../../layouts/Main";
 import Category from "../../pages/Category/Category";
 import Home from "../../pages/Home/Home";
 import News from "../../pages/News/News";
+import Profile from "../../pages/Shared/Others/Profile/Profile";
+import TermsAndCondition from "../../pages/Shared/Others/TermsAndConditions/TermsAndCondition";
 import RequireAuth from "../../Private/RequireAuth/RequireAuth";
 
 const routes = createBrowserRouter([
@@ -40,6 +42,18 @@ const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/terms",
+        element: <TermsAndCondition></TermsAndCondition>,
+      },
+      {
+        path: "/profile",
+        element: (
+          <RequireAuth>
+            <Profile></Profile>
+          </RequireAuth>
+        ),
       },
     ],
   },
