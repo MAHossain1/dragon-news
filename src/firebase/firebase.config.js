@@ -17,10 +17,3 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export default app;
-
-// apiKey: "AIzaSyBrbb-n2H7VnMie_XOdIzXb9MCwo-16v4A",
-// authDomain: "dragon-news-4e333.firebaseapp.com",
-// projectId: "dragon-news-4e333",
-// storageBucket: "dragon-news-4e333.appspot.com",
-// messagingSenderId: "490279921242",
-// appId: "1:490279921242:web:a3f98e39e3bb96a1af5a63",
